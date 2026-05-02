@@ -9,7 +9,37 @@ function App() {
     id: 1,
     name: "Iphone 17 pro max",
     price: "63.290.000",
+    status: 0,
   };
+
+  const users = [
+    {
+      id: 1,
+      name: "Trần Vũ Hoàng",
+      age: 29,
+    },
+    {
+      id: 2,
+      name: "Nguyễn Thị Thu Trang",
+      age: 23,
+    },
+    {
+      id: 3,
+      name: "Nguyễn Đình Bắc",
+      age: 23,
+    },
+  ];
+
+  var user = users.map((user) => {
+    return (
+      <div key={user.id}>
+        <p>Họ và tên: {user.name}</p>
+        <p>Tuổi: {user.age}</p>
+      </div>
+    );
+  });
+
+  // const check = false;
 
   return (
     <>
@@ -41,8 +71,11 @@ function App() {
           <br />
           Price: {product.price} VNĐ
           <br />
+          Status: {product.status ? "Active" : "Pending"}
         </h3>
       </div>
+      <hr />
+      {user}
     </>
   );
 }
